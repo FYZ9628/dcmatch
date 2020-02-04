@@ -1,0 +1,81 @@
+package com.example.dcmatch.controller.public_part;
+
+import com.example.dcmatch.model.Class;
+import com.example.dcmatch.model.Register;
+import com.example.dcmatch.result.Result;
+import com.example.dcmatch.result.Search;
+import com.example.dcmatch.service.RegisterService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+/**
+ * 控制层  转发调用
+ */
+
+@RestController
+public class PublicPartControllerRegister {
+
+    @Autowired
+    RegisterService registerService;
+
+    @GetMapping("/api/getAllRegister")
+    public List<Register> getAllMajor() throws Exception {
+        return registerService.registerList();
+    }
+
+    @PostMapping("/api/searchRegister")
+    public Register findByPhone(@RequestBody Search s) throws Exception {
+
+        return registerService.findByPhone(s.getKeywords());
+    }
+
+
+    @PostMapping("/api/addRegister")
+    public Register addRegister(@RequestBody Register register) throws Exception {
+
+        boolean bl = registerService.isExist(register.getId());
+        if (bl == true){
+            return null;
+        }else {
+
+            register = registerService.addOrUpdatePhone(register);
+
+            return register;
+        }
+    }
+
+
+    @PostMapping("/api/updateRegister")
+    public Register updateRegister(@RequestBody Register register) throws Exception {
+
+        boolean bl = registerService.isExist(register.getId());
+        if (bl == true){
+            register = registerService.addOrUpdatePhone(register);
+            return register;
+        }else {
+            return null;
+        }
+    }
+
+
+    @PostMapping("/api/deleteRegister")
+    public Result deleteRegister(@RequestBody Register registerId) throws Exception {
+        //因为前端只是传了一个 id 过来，所以 teacherId 里面只有一个 id 没有其他信息
+        //所以要再通过 id 查询 teacher 的其他信息
+        Register register = registerService.findById(registerId.getId());
+        if (register != null){
+            registerService.deleteById(registerId.getId());
+            //   删除成功返回码 100
+            return new Result(100);
+        } else {
+            //   删除失败返回码 400
+            return new Result(400);
+        }
+    }
+
+}
