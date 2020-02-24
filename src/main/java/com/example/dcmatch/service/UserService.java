@@ -10,7 +10,7 @@ public class UserService {
     @Autowired
     UserDao userDao;
 
-    public boolean isExist(String account) {
+    public boolean accountIsExist(String account) {
         User user = getByAccount(account);
         return null!=user;
     }
@@ -19,8 +19,21 @@ public class UserService {
         return userDao.findByAccount(account);
     }
 
-    public User get(String account, String password){
+    public User getByAccountAndPassword(String account, String password){
         return userDao.getByAccountAndPassword(account, password);
+    }
+
+    public boolean phoneIsExist(String phone) {
+        User user = getByPhone(phone);
+        return null!=user;
+    }
+
+    public User getByPhone(String phone) {
+        return userDao.findByPhone(phone);
+    }
+
+    public User getByPhoneAndPassword(String phone, String password){
+        return userDao.getByPhoneAndPassword(phone, password);
     }
 
     public void add(User user) {

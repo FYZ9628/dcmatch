@@ -44,4 +44,14 @@ public class RegisterService {
         Register grade = findById(id);
         return null!=grade;
     }
+
+    //    通过  phone 和 password 查询
+    public Register getByPhoneAndPassword(String phone, String password){
+        return registerDao.findByPhoneAndPassword(phone, password);
+    }
+
+    public boolean phoneIsExist(String phone) {
+        Register grade = findByPhone(phone);
+        return null!=grade;
+    }
 }

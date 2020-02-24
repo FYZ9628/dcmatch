@@ -44,7 +44,7 @@ public class OrganizerController {
     @PostMapping("/api/addStudent")
     public Student addOrUpdateStudent(@RequestBody Student student) throws Exception {
 
-        boolean bl = userService.isExist(student.getUser().getAccount());
+        boolean bl = userService.accountIsExist(student.getUser().getAccount());
         if (bl == true){
             return null;
         }else {
@@ -60,7 +60,7 @@ public class OrganizerController {
 
 
 
-        boolean bl = userService.isExist(student.getUser().getAccount());
+        boolean bl = userService.accountIsExist(student.getUser().getAccount());
         if (bl == true){
             Class mClass = classService.findById(student.getmClass().getId());
             student.setmClass(mClass);

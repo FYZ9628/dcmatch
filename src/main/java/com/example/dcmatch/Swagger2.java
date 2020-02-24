@@ -21,7 +21,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 public class Swagger2 {
 
     //访问地址
-    //    http://127.0.0.1:8080/swagger-ui.html
+    //    http://127.0.0.1:8999/swagger-ui.html
 
     //是否开启swagger，正式环境一般是需要关闭的，可根据springboot的多环境配置进行设置
     @Value(value = "${swagger.enabled}")

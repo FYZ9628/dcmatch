@@ -6,17 +6,14 @@ import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
 import com.example.dcmatch.service.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 /**
  * 控制层  转发调用
  */
-
+@CrossOrigin
 @RestController
 public class PublicPartControllerRegister {
 
@@ -36,16 +33,16 @@ public class PublicPartControllerRegister {
 
 
     @PostMapping("/api/addRegister")
-    public Register addRegister(@RequestBody Register register) throws Exception {
+    public Result addRegister(@RequestBody Register register) throws Exception {
 
-        boolean bl = registerService.isExist(register.getId());
+        boolean bl = registerService.phoneIsExist(register.getPhone());
         if (bl == true){
             return null;
         }else {
 
             register = registerService.addOrUpdatePhone(register);
 
-            return register;
+            return new Result(200);
         }
     }
 

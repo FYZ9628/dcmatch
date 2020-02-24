@@ -1,19 +1,14 @@
 package com.example.dcmatch.controller.admin;
 
-import com.example.dcmatch.dao.OrganizerDao;
 import com.example.dcmatch.model.Organizer;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
 import com.example.dcmatch.service.OrganizerService;
 import com.example.dcmatch.service.UserService;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
@@ -42,7 +37,7 @@ public class AdminController {
     @PostMapping("/api/addOrganizer")
     public Organizer addOrganizer(@RequestBody Organizer organizer) throws Exception {
 
-        boolean bl = userService.isExist(organizer.getUser().getAccount());
+        boolean bl = userService.accountIsExist(organizer.getUser().getAccount());
         if (bl == true){
             return null;
         }else {
@@ -56,7 +51,7 @@ public class AdminController {
     @PostMapping("/api/updateOrganizer")
     public Organizer updateOrganizer(@RequestBody Organizer organizer) throws Exception {
 
-        boolean bl = userService.isExist(organizer.getUser().getAccount());
+        boolean bl = userService.accountIsExist(organizer.getUser().getAccount());
         if (bl == true){
             userService.add(organizer.getUser());
             organizer = organizerService.addOrUpTeacher(organizer);

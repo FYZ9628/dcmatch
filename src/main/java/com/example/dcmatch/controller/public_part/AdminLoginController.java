@@ -30,7 +30,7 @@ public class AdminLoginController {
         account = HtmlUtils.htmlEscape(account);
 
         // 返回码：100对应管理员，200对应教师，300对应学生，400是错误码
-        User user = userService.get(account, requestUser.getPassword());
+        User user = userService.getByAccountAndPassword(account, requestUser.getPassword());
         if (null == user) {
             return new Result(400);
         } else if (user.getType() == 1){
@@ -45,7 +45,7 @@ public class AdminLoginController {
     @PostMapping("/api/updatePassword")
     public User updatePassword(@RequestBody UserPost userPost) throws Exception {
 
-        User user = userService.get(userPost.getAccount(), userPost.getOldPassword());
+        User user = userService.getByAccountAndPassword(userPost.getAccount(), userPost.getOldPassword());
         if (user != null){
             User newUser = new User();
             User userId = userService.getByAccount(userPost.getAccount());
