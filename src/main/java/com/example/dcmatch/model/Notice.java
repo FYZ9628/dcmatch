@@ -15,7 +15,14 @@ public class Notice {
 
     String title;
     String time;
-    String link;
+
+    //对应于外键的名，整个列被外键的对象替换
+    //多个作业可以对应多个教师
+    @ManyToOne
+    @JoinColumn(name="organizer_id")
+    private Organizer organizer;
+
+    String content;
 
     public int getId() {
         return id;
@@ -41,11 +48,19 @@ public class Notice {
         this.time = time;
     }
 
-    public String getLink() {
-        return link;
+    public Organizer getOrganizer() {
+        return organizer;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setOrganizer(Organizer organizer) {
+        this.organizer = organizer;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

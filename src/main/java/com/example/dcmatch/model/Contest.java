@@ -27,6 +27,12 @@ public class Contest {
     @JoinColumn(name="student_id")
     private Student student;
 
+    //对应于外键的名，整个列被外键的对象替换
+    //多个作业可以对应多个教师
+    @ManyToOne
+    @JoinColumn(name="organizer_id")
+    private Organizer organizer;
+
     int state;
     int score;
 
@@ -52,6 +58,14 @@ public class Contest {
 
     public void setStudent(Student student) {
         this.student = student;
+    }
+
+    public Organizer getOrganizer() {
+        return organizer;
+    }
+
+    public void setOrganizer(Organizer organizer) {
+        this.organizer = organizer;
     }
 
     public int getState() {

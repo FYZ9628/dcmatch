@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ContestDetailDao extends JpaRepository<ContestDetail,Integer> {
 
-    List<ContestDetail> findAllByContestTitleLike(String contestTitle);
+    List<ContestDetail> findAllByContestTitleLikeOrOrganizer_User_NameLike(String contestTitle, String organizerName);
 
     ContestDetail findById(int id);
 }

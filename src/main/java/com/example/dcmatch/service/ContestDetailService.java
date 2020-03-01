@@ -27,7 +27,7 @@ public class ContestDetailService {
 
     //根据班级名称查询
     public List<ContestDetail> findAllByContestTitleLike(String keywords) {
-        return contestDetailDao.findAllByContestTitleLike('%' + keywords + '%');
+        return contestDetailDao.findAllByContestTitleLikeOrOrganizer_User_NameLike('%' + keywords + '%', '%' + keywords + '%');
     }
 
     //    通过 id 删除

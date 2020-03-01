@@ -14,16 +14,20 @@ public class ContestDetail {
     @Column(name = "id")
     int id;
 
+    String contestTitle;
+
     //对应于外键的名，整个列被外键的对象替换
     //多个作业可以对应多个教师
     @ManyToOne
     @JoinColumn(name="organizer_id")
     private Organizer organizer;
 
-    String contestTitle;
     String contestContent;
     String startTime;
     String endTime;
+    String publishTime;
+    String link;
+    int type;
 
     public int getId() {
         return id;
@@ -33,20 +37,20 @@ public class ContestDetail {
         this.id = id;
     }
 
-    public Organizer getOrganizer() {
-        return organizer;
-    }
-
-    public void setOrganizer(Organizer organizer) {
-        this.organizer = organizer;
-    }
-
     public String getContestTitle() {
         return contestTitle;
     }
 
     public void setContestTitle(String contestTitle) {
         this.contestTitle = contestTitle;
+    }
+
+    public Organizer getOrganizer() {
+        return organizer;
+    }
+
+    public void setOrganizer(Organizer organizer) {
+        this.organizer = organizer;
     }
 
     public String getContestContent() {
@@ -71,5 +75,29 @@ public class ContestDetail {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    public String getPublishTime() {
+        return publishTime;
+    }
+
+    public void setPublishTime(String publishTime) {
+        this.publishTime = publishTime;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }
