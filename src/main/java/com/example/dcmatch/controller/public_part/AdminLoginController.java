@@ -15,13 +15,12 @@ import org.springframework.web.util.HtmlUtils;
 /**
  * 控制层  转发调用
  */
-
+@CrossOrigin
 @Controller
 public class AdminLoginController {
     @Autowired
     UserService userService;
 
-    @CrossOrigin
     @PostMapping(value = "api/admin_login")
     @ResponseBody
     public Result login(@RequestBody User requestUser) {

@@ -19,15 +19,9 @@ public class Student {
     @JoinColumn(name="user_id")
     private User user;
 
-    String name;
     String sex;
     String email;
-
-    //对应于外键的名，整个列被外键的对象替换
-    @OneToOne
-    @JoinColumn(name="school_id")
-    private School school;
-
+    String school;
     String admissionDate;
     String graduationDate;
     String academy;
@@ -52,14 +46,6 @@ public class Student {
         this.user = user;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getSex() {
         return sex;
     }
@@ -76,11 +62,11 @@ public class Student {
         this.email = email;
     }
 
-    public School getSchool() {
+    public String getSchool() {
         return school;
     }
 
-    public void setSchool(School school) {
+    public void setSchool(String school) {
         this.school = school;
     }
 

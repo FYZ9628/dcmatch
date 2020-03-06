@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface StudentDao extends JpaRepository<Student,Integer> {
 
-    List<Student> findAllByNameLikeOrUser_AccountLike(String name, String account);
+    List<Student> findAllByUser_NameLikeOrUser_AccountLike(String name, String account);
 
     Student findById(int id);
 

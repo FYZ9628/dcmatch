@@ -26,8 +26,8 @@ public class StudentService {
 
 
     //根据姓名或账号查询
-    public List<Student> findAllByNameLikeOrUser_AccountLike(String keywords) {
-        return studentDao.findAllByNameLikeOrUser_AccountLike('%'
+    public List<Student> findAllByUser_NameLikeOrUser_AccountLike(String keywords) {
+        return studentDao.findAllByUser_NameLikeOrUser_AccountLike('%'
                 + keywords + '%', '%' + keywords + '%');
     }
 

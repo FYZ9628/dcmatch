@@ -21,7 +21,7 @@ import org.springframework.web.util.HtmlUtils;
 /**
  * 控制层  转发调用
  */
-
+@CrossOrigin
 @Controller
 public class LoginController {
 
@@ -34,7 +34,6 @@ public class LoginController {
     @Autowired
     RegisterService registerService;
 
-    @CrossOrigin
     @PostMapping(value = "api/login")
     @ResponseBody
     @ApiOperation(value="学生或教师登录")

@@ -8,17 +8,14 @@ import com.example.dcmatch.service.ClassService;
 import com.example.dcmatch.service.StudentService;
 import com.example.dcmatch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 /**
  * 控制层  转发调用
  */
-
+@CrossOrigin
 @RestController
 public class OrganizerController {
 
@@ -37,7 +34,7 @@ public class OrganizerController {
     @PostMapping("/api/searchStudent")
     public List<Student> studentFindAllByNameLikeOrUser_AccountLike(@RequestBody Search s) throws Exception {
 
-        return studentService.findAllByNameLikeOrUser_AccountLike(s.getKeywords());
+        return studentService.findAllByUser_NameLikeOrUser_AccountLike(s.getKeywords());
     }
 
 
