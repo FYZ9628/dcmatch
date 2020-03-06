@@ -19,30 +19,22 @@ public class Student {
     @JoinColumn(name="user_id")
     private User user;
 
-    String phone;
     String name;
     String sex;
+    String email;
 
     //对应于外键的名，整个列被外键的对象替换
     @OneToOne
-    @JoinColumn(name="academy_id")
-    Academy academy;
+    @JoinColumn(name="school_id")
+    private School school;
 
+    String admissionDate;
+    String graduationDate;
+    String academy;
+    String major;
+    String education;
+    String idImg;
 
-    //对应于外键的名，整个列被外键的对象替换
-    @OneToOne
-    @JoinColumn(name="grade_id")
-    Grade grade;
-
-    //对应于外键的名，整个列被外键的对象替换
-    @OneToOne
-    @JoinColumn(name="major_id")
-    Major major;
-
-    //对应于外键的名，整个列被外键的对象替换
-    @OneToOne
-    @JoinColumn(name="class_id")
-    Class mClass;
 
     public int getId() {
         return id;
@@ -58,14 +50,6 @@ public class Student {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     public String getName() {
@@ -84,35 +68,67 @@ public class Student {
         this.sex = sex;
     }
 
-    public Academy getAcademy() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
+    }
+
+    public String getAdmissionDate() {
+        return admissionDate;
+    }
+
+    public void setAdmissionDate(String admissionDate) {
+        this.admissionDate = admissionDate;
+    }
+
+    public String getGraduationDate() {
+        return graduationDate;
+    }
+
+    public void setGraduationDate(String graduationDate) {
+        this.graduationDate = graduationDate;
+    }
+
+    public String getAcademy() {
         return academy;
     }
 
-    public void setAcademy(Academy academy) {
+    public void setAcademy(String academy) {
         this.academy = academy;
     }
 
-    public Grade getGrade() {
-        return grade;
-    }
-
-    public void setGrade(Grade grade) {
-        this.grade = grade;
-    }
-
-    public Major getMajor() {
+    public String getMajor() {
         return major;
     }
 
-    public void setMajor(Major major) {
+    public void setMajor(String major) {
         this.major = major;
     }
 
-    public Class getmClass() {
-        return mClass;
+    public String getEducation() {
+        return education;
     }
 
-    public void setmClass(Class mClass) {
-        this.mClass = mClass;
+    public void setEducation(String education) {
+        this.education = education;
+    }
+
+    public String getIdImg() {
+        return idImg;
+    }
+
+    public void setIdImg(String idImg) {
+        this.idImg = idImg;
     }
 }

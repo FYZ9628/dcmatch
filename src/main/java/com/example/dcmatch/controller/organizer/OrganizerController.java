@@ -62,8 +62,6 @@ public class OrganizerController {
 
         boolean bl = userService.accountIsExist(student.getUser().getAccount());
         if (bl == true){
-            Class mClass = classService.findById(student.getmClass().getId());
-            student.setmClass(mClass);
             userService.add(student.getUser());
             student = studentService.addOrUpStudent(student);
             return student;
