@@ -27,7 +27,9 @@ public class MyWebConfigurer implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //通过本地服务器访图片
-        registry.addResourceHandler("/api/file/**").addResourceLocations("file:" + "d:/workspace/img/dcmatch/");
+        //访问地址 http://localhost:8999/api/file/student_id_card.jpg
+        registry.addResourceHandler("/api/file/**")
+                .addResourceLocations("file:" + "d:/workspace/img/dcmatch/");
     }
 
 }

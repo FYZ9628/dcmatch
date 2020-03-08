@@ -49,6 +49,7 @@ public class LoginController {
         User user2 = userService.getByPhoneAndPassword(account, requestUser.getPassword());
         Register register = registerService.getByPhoneAndPassword(account, requestUser.getPassword());
 
+        // 通过account和password验证登录
         if (null != user) {
             if (user.getType() == 3) {
                 String mAccount = user.getAccount();
@@ -67,6 +68,7 @@ public class LoginController {
             return new Result(400);
         }
 
+        // 通过phone和password验证登录
         if (null != user2) {
             if (user2.getType() == 3) {
                 String mAccount = user2.getPhone();
