@@ -40,7 +40,8 @@ public class LoginController {
         String account = requestUser.getAccount();
         account = HtmlUtils.htmlEscape(account);
 
-        // 返回码：100对应管理员，200对应教师，300对应学生，400是错误码，500是默认用户(即还没有认证的用户)
+        // 返回码：100对应管理员，200对应教师，300对应学生，400是错误码
+        // 500是默认用户(即还没有认证的用户)，600对应院校
         // 前端返回的 account 可以是账号（account），也可以是电话号码（phone）
         // 亦可以是 注册了但未认证的用户号码（phone）
         User user = userService.getByAccountAndPassword(account, requestUser.getPassword());
@@ -62,6 +63,14 @@ public class LoginController {
                 String mName = user.getName();
 //                String mName = organizer.getName();
                 return new Result(200, mAccount, mPassword, mName);
+            }else if (user.getType() == 6) {
+
+//                Organizer organizer = organizerService.findByUser_Account(user.getAccount());
+                String mAccount = user.getAccount();
+                String mPassword = user.getPassword();
+                String mName = user.getName();
+//                String mName = organizer.getName();
+                return new Result(600, mAccount, mPassword, mName);
             }
             return new Result(400);
         }
@@ -81,7 +90,15 @@ public class LoginController {
                 String mName = user2.getName();
 //                String mName = organizer.getName();
                 return new Result(200, mAccount, mPassword, mName);
-            }
+            }else if (user2.getType() == 6) {
+
+//                Organizer organizer = organizerService.findByUser_Account(user.getAccount());
+                String mAccount = user2.getPhone();
+                String mPassword = user2.getPassword();
+                String mName = user2.getName();
+//                String mName = organizer.getName();
+            return new Result(600, mAccount, mPassword, mName);
+        }
         }
 
         if (null != register) {
