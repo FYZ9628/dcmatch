@@ -7,10 +7,9 @@ import java.util.List;
 
 public interface OrganizerDao extends JpaRepository<Organizer,Integer> {
 
-    List<Organizer> findAllByNameLikeOrUser_AccountLike(String name, String account);
+    List<Organizer> findAllByUser_NameLikeOrUser_AccountLike(String name, String account);
 
     Organizer findById(int id);
-
 
     Organizer findByUser_Account(String account);
 

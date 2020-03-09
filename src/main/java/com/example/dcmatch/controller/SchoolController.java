@@ -1,4 +1,4 @@
-package com.example.dcmatch.controller.student;
+package com.example.dcmatch.controller;
 
 import com.example.dcmatch.model.Class;
 import com.example.dcmatch.model.School;

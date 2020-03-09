@@ -29,8 +29,8 @@ public class OrganizerService {
 
 
     //根据姓名或账号查询
-    public List<Organizer> findAllByNameLikeOrUser_AccountLike(String keywords) {
-        return organizerDao.findAllByNameLikeOrUser_AccountLike('%'
+    public List<Organizer> findAllByUser_NameLikeOrUser_AccountLike(String keywords) {
+        return organizerDao.findAllByUser_NameLikeOrUser_AccountLike('%'
                 + keywords + '%', '%' + keywords + '%');
     }
 

@@ -1,4 +1,4 @@
-package com.example.dcmatch.controller.public_part;
+package com.example.dcmatch.controller.login;
 
 import com.example.dcmatch.model.User;
 import com.example.dcmatch.result.Result;

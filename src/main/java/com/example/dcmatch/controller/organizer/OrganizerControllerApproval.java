@@ -15,12 +15,4 @@ import java.util.List;
 @CrossOrigin
 @RestController
 public class OrganizerControllerApproval {
-
-    @Autowired
-    OrganizerService organizerService;
-
-    @GetMapping("/api/organizerInfo")
-    public List<Organizer> organizerList() throws Exception {
-        return organizerService.organizerList();
-    }
 }

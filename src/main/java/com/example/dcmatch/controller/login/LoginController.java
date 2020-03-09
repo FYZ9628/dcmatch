@@ -1,8 +1,6 @@
-package com.example.dcmatch.controller.public_part;
+package com.example.dcmatch.controller.login;
 
-import com.example.dcmatch.model.Organizer;
 import com.example.dcmatch.model.Register;
-import com.example.dcmatch.model.Student;
 import com.example.dcmatch.model.User;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.service.OrganizerService;

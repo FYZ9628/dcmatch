@@ -1,6 +1,5 @@
-package com.example.dcmatch.controller.public_part;
+package com.example.dcmatch.controller.login;
 
-import com.example.dcmatch.model.Class;
 import com.example.dcmatch.model.Register;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
@@ -15,7 +14,7 @@ import java.util.List;
  */
 @CrossOrigin
 @RestController
-public class PublicPartControllerRegister {
+public class RegisterController {
 
     @Autowired
     RegisterService registerService;

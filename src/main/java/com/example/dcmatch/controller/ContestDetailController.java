@@ -1,4 +1,4 @@
-package com.example.dcmatch.controller.organizer;
+package com.example.dcmatch.controller;
 
 import com.example.dcmatch.model.ContestDetail;
 import com.example.dcmatch.result.Result;
@@ -14,7 +14,7 @@ import java.util.List;
  */
 @CrossOrigin
 @RestController
-public class OrganizerControllerContestDetail {
+public class ContestDetailController {
 
     @Autowired
     ContestDetailService contestDetailService;

@@ -1,4 +1,4 @@
-package com.example.dcmatch.controller.public_part;
+package com.example.dcmatch.controller;
 
 import com.example.dcmatch.model.Notice;
 import com.example.dcmatch.result.Result;

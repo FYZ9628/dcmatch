@@ -1,14 +1,10 @@
-package com.example.dcmatch.controller.public_part;
+package com.example.dcmatch.controller;
 
-import com.example.dcmatch.model.Banner;
 import com.example.dcmatch.model.User;
 import com.example.dcmatch.result.Search;
-import com.example.dcmatch.service.BannerService;
 import com.example.dcmatch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * 控制层  转发调用
@@ -16,7 +12,7 @@ import java.util.List;
  */
 @CrossOrigin
 @RestController
-public class Authentication {
+public class UserController {
     @Autowired
     UserService userService;
 

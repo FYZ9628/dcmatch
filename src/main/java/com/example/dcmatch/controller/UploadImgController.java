@@ -1,7 +1,6 @@
-package com.example.dcmatch.controller.public_part;
+package com.example.dcmatch.controller;
 
 import com.example.dcmatch.result.ImagePath;
-import com.example.dcmatch.result.Search;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

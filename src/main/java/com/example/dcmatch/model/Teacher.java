@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "organizer")
+@Table(name = "teacher")
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
-public class Organizer {
+public class Teacher {
     //定义主键
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +18,14 @@ public class Organizer {
     @OneToOne
     @JoinColumn(name="user_id")
     private User user;
+
+    String sex;
     String email;
     String school;
-    String establishDate;
-    String schoolType;
-    String schoolRunningType;
+    String entryDate;
+    String academy;
+    String professionalTitle;
+    String education;
     String idImg;
 
     public int getId() {
@@ -41,6 +44,14 @@ public class Organizer {
         this.user = user;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -57,28 +68,36 @@ public class Organizer {
         this.school = school;
     }
 
-    public String getEstablishDate() {
-        return establishDate;
+    public String getEntryDate() {
+        return entryDate;
     }
 
-    public void setEstablishDate(String establishDate) {
-        this.establishDate = establishDate;
+    public void setEntryDate(String entryDate) {
+        this.entryDate = entryDate;
     }
 
-    public String getSchoolType() {
-        return schoolType;
+    public String getAcademy() {
+        return academy;
     }
 
-    public void setSchoolType(String schoolType) {
-        this.schoolType = schoolType;
+    public void setAcademy(String academy) {
+        this.academy = academy;
     }
 
-    public String getSchoolRunningType() {
-        return schoolRunningType;
+    public String getProfessionalTitle() {
+        return professionalTitle;
     }
 
-    public void setSchoolRunningType(String schoolRunningType) {
-        this.schoolRunningType = schoolRunningType;
+    public void setProfessionalTitle(String professionalTitle) {
+        this.professionalTitle = professionalTitle;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
     }
 
     public String getIdImg() {

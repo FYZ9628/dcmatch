@@ -1,11 +1,9 @@
-package com.example.dcmatch.controller.public_part;
+package com.example.dcmatch.controller;
 
 import com.example.dcmatch.model.Banner;
-import com.example.dcmatch.model.Notice;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
 import com.example.dcmatch.service.BannerService;
-import com.example.dcmatch.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
