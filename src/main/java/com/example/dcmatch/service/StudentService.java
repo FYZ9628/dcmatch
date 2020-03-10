@@ -44,8 +44,8 @@ public class StudentService {
 
 
     //    通过  account 查询
-    public Student findByUser_Account(String account){
-        return studentDao.findByUser_Account(account);
+    public Student getByUser_Account(String account){
+        return studentDao.getByUser_Account(account);
     }
 
 }

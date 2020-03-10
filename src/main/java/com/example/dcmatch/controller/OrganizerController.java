@@ -3,6 +3,7 @@ package com.example.dcmatch.controller;
 import com.example.dcmatch.model.Class;
 import com.example.dcmatch.model.Organizer;
 import com.example.dcmatch.model.Student;
+import com.example.dcmatch.model.Teacher;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
 import com.example.dcmatch.service.ClassService;
@@ -45,6 +46,12 @@ public class OrganizerController {
         return organizerService.findAllByUser_NameLikeOrUser_AccountLike(s.getKeywords());
     }
 
+
+    @PostMapping("/api/searchOrganizerByAccount")
+    public Organizer getOrganizerByUser_Account(@RequestBody Search s) throws Exception {
+
+        return organizerService.getByUser_Account(s.getKeywords());
+    }
 
     @PostMapping("/api/addOrganizer")
     public Organizer addOrganizer(@RequestBody Organizer organizer) throws Exception {

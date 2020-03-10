@@ -1,6 +1,7 @@
 package com.example.dcmatch.dao;
 
 import com.example.dcmatch.model.Organizer;
+import com.example.dcmatch.model.Teacher;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -11,6 +12,5 @@ public interface OrganizerDao extends JpaRepository<Organizer,Integer> {
 
     Organizer findById(int id);
 
-    Organizer findByUser_Account(String account);
-
+    Organizer getByUser_Account(String account);
 }

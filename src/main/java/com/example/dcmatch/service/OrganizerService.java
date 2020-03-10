@@ -2,6 +2,7 @@ package com.example.dcmatch.service;
 
 import com.example.dcmatch.dao.OrganizerDao;
 import com.example.dcmatch.model.Organizer;
+import com.example.dcmatch.model.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -46,9 +47,9 @@ public class OrganizerService {
     }
 
 
-    //    通过  account 查询
-    public Organizer findByUser_Account(String account){
-        return organizerDao.findByUser_Account(account);
-    }
 
+    //    通过  account 查询
+    public Organizer getByUser_Account(String account){
+        return organizerDao.getByUser_Account(account);
+    }
 }

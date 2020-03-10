@@ -38,6 +38,12 @@ public class StudentController {
     }
 
 
+    @PostMapping("/api/searchStudentByAccount")
+    public Student getStudentByUser_Account(@RequestBody Search s) throws Exception {
+
+        return studentService.getByUser_Account(s.getKeywords());
+    }
+
     @PostMapping("/api/addStudent")
     public Student addOrUpdateStudent(@RequestBody Student student) throws Exception {
 

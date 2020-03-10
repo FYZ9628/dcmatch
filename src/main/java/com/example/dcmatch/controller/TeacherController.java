@@ -35,6 +35,12 @@ public class TeacherController {
         return teacherService.findAllByUser_NameLikeOrUser_AccountLike(s.getKeywords());
     }
 
+    @PostMapping("/api/searchTeacherByAccount")
+    public Teacher getTeacherByUser_Account(@RequestBody Search s) throws Exception {
+
+        return teacherService.getByUser_Account(s.getKeywords());
+    }
+
 
     @PostMapping("/api/addTeacher")
     public Teacher addOrUpdateTeacher(@RequestBody Teacher teacher) throws Exception {

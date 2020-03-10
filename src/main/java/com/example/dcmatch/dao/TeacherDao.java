@@ -13,6 +13,6 @@ public interface TeacherDao extends JpaRepository<Teacher, Integer> {
 
     Teacher findById(int id);
 
-    Teacher findByUser_Account(String account);
+    Teacher getByUser_Account(String account);
 
 }
