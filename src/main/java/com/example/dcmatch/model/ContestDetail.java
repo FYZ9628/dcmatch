@@ -23,10 +23,13 @@ public class ContestDetail {
     private Organizer organizer;
 
     String contestContent;
-    String startTime;
-    String endTime;
+    String signUpStartTime;
+    String signUpEndTime;
     String publishTime;
-    String link;
+    String place;
+    String holdDate;
+    String holdStartTime;
+    String holdEndTime;
     int type;
 
     public int getId() {
@@ -61,20 +64,20 @@ public class ContestDetail {
         this.contestContent = contestContent;
     }
 
-    public String getStartTime() {
-        return startTime;
+    public String getSignUpStartTime() {
+        return signUpStartTime;
     }
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
+    public void setSignUpStartTime(String signUpStartTime) {
+        this.signUpStartTime = signUpStartTime;
     }
 
-    public String getEndTime() {
-        return endTime;
+    public String getSignUpEndTime() {
+        return signUpEndTime;
     }
 
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
+    public void setSignUpEndTime(String signUpEndTime) {
+        this.signUpEndTime = signUpEndTime;
     }
 
     public String getPublishTime() {
@@ -85,12 +88,36 @@ public class ContestDetail {
         this.publishTime = publishTime;
     }
 
-    public String getLink() {
-        return link;
+    public String getPlace() {
+        return place;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    public String getHoldDate() {
+        return holdDate;
+    }
+
+    public void setHoldDate(String holdDate) {
+        this.holdDate = holdDate;
+    }
+
+    public String getHoldStartTime() {
+        return holdStartTime;
+    }
+
+    public void setHoldStartTime(String holdStartTime) {
+        this.holdStartTime = holdStartTime;
+    }
+
+    public String getHoldEndTime() {
+        return holdEndTime;
+    }
+
+    public void setHoldEndTime(String holdEndTime) {
+        this.holdEndTime = holdEndTime;
     }
 
     public int getType() {
