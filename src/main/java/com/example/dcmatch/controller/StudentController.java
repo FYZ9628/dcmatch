@@ -60,9 +60,6 @@ public class StudentController {
 
     @PostMapping("/api/updateStudent")
     public Student updateStudent(@RequestBody Student student) throws Exception {
-
-
-
         boolean bl = userService.accountIsExist(student.getUser().getAccount());
         if (bl == true){
             userService.add(student.getUser());

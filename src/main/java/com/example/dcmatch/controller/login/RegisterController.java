@@ -49,7 +49,8 @@ public class RegisterController {
     @PostMapping("/api/updateRegister")
     public Register updateRegister(@RequestBody Register register) throws Exception {
 
-        boolean bl = registerService.isExist(register.getId());
+//        boolean bl = registerService.isExist(register.getId());
+        boolean bl = registerService.phoneIsExist(register.getPhone());
         if (bl == true){
             register = registerService.addOrUpdatePhone(register);
             return register;
