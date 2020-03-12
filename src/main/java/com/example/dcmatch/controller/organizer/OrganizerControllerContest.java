@@ -3,6 +3,7 @@ package com.example.dcmatch.controller.organizer;
 import com.example.dcmatch.model.Contest;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
+import com.example.dcmatch.result.SearchByInt;
 import com.example.dcmatch.service.ContestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -44,6 +45,18 @@ public class OrganizerControllerContest {
     public List<Contest> findAllByStudentAccount(@RequestBody Search s) throws Exception {
 
         return contestService.findAllByStudentAccount(s.getKeywords());
+    }
+
+    @PostMapping("/api/searchContestByOrganizerAccount")
+    public List<Contest> findAllByOrganizerAccount(@RequestBody Search s) throws Exception {
+
+        return contestService.findAllByOrganizerAccount(s.getKeywords());
+    }
+
+    @PostMapping("/api/searchContestById")
+    public Contest findByContestId(@RequestBody SearchByInt searchByInt) throws Exception {
+
+        return contestService.findById(searchByInt.getKeywords());
     }
 
     //每一个报名的学生都会产生一个比赛记录，只是contest添加，但contestDetail不用添加

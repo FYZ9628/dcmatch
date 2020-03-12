@@ -43,6 +43,10 @@ public class ContestService {
         return contestDao.findAllByStudent_User_Account(keywords);
     }
 
+    public List<Contest> findAllByOrganizerAccount(String keywords) {
+        return contestDao.findAllByContestDetail_Organizer_User_Account(keywords);
+    }
+
     //    通过 id 删除
     public void deleteById(int id) {
         contestDao.deleteById(id);

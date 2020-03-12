@@ -18,5 +18,7 @@ public interface ContestDao extends JpaRepository<Contest,Integer> {
 
     List<Contest> findAllByStudent_User_Account(String account);
 
+    List<Contest> findAllByContestDetail_Organizer_User_Account(String account);
+
     Contest findById(int id);
 }
