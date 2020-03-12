@@ -39,6 +39,10 @@ public class ContestService {
                 ,'%' + keywords + '%');
     }
 
+    public List<Contest> findAllByStudentAccount(String keywords) {
+        return contestDao.findAllByStudent_User_Account(keywords);
+    }
+
     //    通过 id 删除
     public void deleteById(int id) {
         contestDao.deleteById(id);
