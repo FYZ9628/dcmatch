@@ -1,5 +1,6 @@
 package com.example.dcmatch.controller;
 
+import com.example.dcmatch.model.Contest;
 import com.example.dcmatch.model.ContestDetail;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
@@ -30,6 +31,11 @@ public class ContestDetailController {
         return contestDetailService.findAllByContestTitleLike(s.getKeywords());
     }
 
+    @PostMapping("/api/searchContestDetailByOrganizerAccount")
+    public List<ContestDetail> findAllByOrganizerAccount(@RequestBody Search s) throws Exception {
+
+        return contestDetailService.findAllByOrganizerAccount(s.getKeywords());
+    }
 
     @PostMapping("/api/addContestDetail")
     public ContestDetail addContestDetail(@RequestBody ContestDetail contestDetail) throws Exception {

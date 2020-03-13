@@ -32,6 +32,7 @@ public class ContestDetail {
     String holdEndTime;
     String type;
     int upperLimit;
+    String state;
 
     public int getId() {
         return id;
@@ -135,5 +136,13 @@ public class ContestDetail {
 
     public void setUpperLimit(int upperLimit) {
         this.upperLimit = upperLimit;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }

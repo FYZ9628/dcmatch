@@ -1,6 +1,7 @@
 package com.example.dcmatch.service;
 
 import com.example.dcmatch.dao.ContestDetailDao;
+import com.example.dcmatch.model.Contest;
 import com.example.dcmatch.model.ContestDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -29,6 +30,11 @@ public class ContestDetailService {
     public List<ContestDetail> findAllByContestTitleLike(String keywords) {
         return contestDetailDao.findAllByContestTitleLikeOrOrganizer_User_NameLike('%' + keywords + '%', '%' + keywords + '%');
     }
+
+    public List<ContestDetail> findAllByOrganizerAccount(String keywords) {
+        return contestDetailDao.findAllByOrganizer_User_Account(keywords);
+    }
+
 
     //    通过 id 删除
     public void deleteById(int id) {
