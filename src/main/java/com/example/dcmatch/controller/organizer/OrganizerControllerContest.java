@@ -59,6 +59,12 @@ public class OrganizerControllerContest {
         return contestService.findById(searchByInt.getKeywords());
     }
 
+    @PostMapping("/api/searchContestByContestDetailId")
+    public List<Contest> findByContestDetailId(@RequestBody SearchByInt searchByInt) throws Exception {
+
+        return contestService.findAllByContestDetail_Id(searchByInt.getKeywords());
+    }
+
     //每一个报名的学生都会产生一个比赛记录，只是contest添加，但contestDetail不用添加
     //当contestDetail删除记录时，contest里所有有关的比赛记录都要被删除
     @PostMapping("/api/addContest")

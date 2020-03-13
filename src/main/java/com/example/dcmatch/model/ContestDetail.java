@@ -30,7 +30,8 @@ public class ContestDetail {
     String holdDate;
     String holdStartTime;
     String holdEndTime;
-    int type;
+    String type;
+    int upperLimit;
 
     public int getId() {
         return id;
@@ -120,11 +121,19 @@ public class ContestDetail {
         this.holdEndTime = holdEndTime;
     }
 
-    public int getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(String type) {
         this.type = type;
+    }
+
+    public int getUpperLimit() {
+        return upperLimit;
+    }
+
+    public void setUpperLimit(int upperLimit) {
+        this.upperLimit = upperLimit;
     }
 }
