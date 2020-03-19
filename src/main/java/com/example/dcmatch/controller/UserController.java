@@ -39,6 +39,12 @@ public class UserController {
         return userService.getByAccount(s.getKeywords());
     }
 
+    @PostMapping("/api/searchUserByPhone")
+    public User getUserByPhone(@RequestBody Search s) throws Exception {
+
+        return userService.getByPhone(s.getKeywords());
+    }
+
     @PostMapping("/api/addUser")
     public User addOrUpdateUser(@RequestBody User user) throws Exception {
 

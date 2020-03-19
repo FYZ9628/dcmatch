@@ -55,14 +55,11 @@ public class UploadImgController {
         //前端页面处理路径，
         //var imgpath=path.split("/");
         //imgpath = imgpath[imgpath.length-1];
-
         String resultInfo = null;
-        //System.out.println(path);///imctemp-rainy/2.jpg
         int lastIndexOf = imagePath.getImagePath().lastIndexOf("/");
-        String img_path = imagePath.getImagePath().substring(lastIndexOf + 1, imagePath.getImagePath().length());
-        //System.out.println(img_path);
+        String img_path = imagePath.getImagePath().substring(lastIndexOf + 1,
+                imagePath.getImagePath().length());
         img_path = "D:/workspace/img/dcmatch/" + img_path;
-        //System.out.println(img_path);//输出测试一下文件路径是否正确
         File file = new File(img_path);
         if (file.exists()) {//文件是否存在
             file.delete();
