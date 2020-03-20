@@ -1,6 +1,7 @@
 package com.example.dcmatch.service;
 
 import com.example.dcmatch.dao.NoticeDao;
+import com.example.dcmatch.model.ContestDetail;
 import com.example.dcmatch.model.Notice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -28,6 +29,10 @@ public class NoticeService {
     //根据通知名称查询
     public List<Notice> findAllByTitleLike(String keywords) {
         return noticeDao.findAllByTitleLike('%' + keywords + '%');
+    }
+
+    public List<Notice> findAllByOrganizerAccount(String keywords) {
+        return noticeDao.findAllByOrganizer_User_Account(keywords);
     }
 
     //    通过 id 删除

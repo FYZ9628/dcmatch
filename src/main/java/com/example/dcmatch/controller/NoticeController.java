@@ -1,5 +1,6 @@
 package com.example.dcmatch.controller;
 
+import com.example.dcmatch.model.ContestDetail;
 import com.example.dcmatch.model.Notice;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
@@ -27,6 +28,12 @@ public class NoticeController {
     public List<Notice> findAllByTitleLike(@RequestBody Search s) throws Exception {
 
         return noticeService.findAllByTitleLike(s.getKeywords());
+    }
+
+    @PostMapping("/api/searchNoticeByOrganizerAccount")
+    public List<Notice> findAllByOrganizerAccount(@RequestBody Search s) throws Exception {
+
+        return noticeService.findAllByOrganizerAccount(s.getKeywords());
     }
 
     @PostMapping("/api/addNotice")
