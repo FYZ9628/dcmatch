@@ -14,4 +14,6 @@ public interface ContestDetailDao extends JpaRepository<ContestDetail,Integer> {
     List<ContestDetail> findAllByOrganizer_User_Account(String account);
 
     ContestDetail findById(int id);
+
+    ContestDetail findByContestTitle(String contestTitle);
 }

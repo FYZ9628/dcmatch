@@ -4,6 +4,7 @@ import com.example.dcmatch.model.Contest;
 import com.example.dcmatch.model.ContestDetail;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
+import com.example.dcmatch.result.SearchByInt;
 import com.example.dcmatch.service.ContestDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +30,19 @@ public class ContestDetailController {
     public List<ContestDetail> findAllByContestTitleLike(@RequestBody Search s) throws Exception {
 
         return contestDetailService.findAllByContestTitleLike(s.getKeywords());
+    }
+
+    @PostMapping("/api/searchContestDetailById")
+    public ContestDetail findById(@RequestBody SearchByInt s) throws Exception {
+
+        return contestDetailService.findById(s.getKeywords());
+    }
+
+
+    @PostMapping("/api/searchContestDetailByContestTitle")
+    public ContestDetail findByContestTitle(@RequestBody Search s) throws Exception {
+
+        return contestDetailService.findByContestTitle(s.getKeywords());
     }
 
     @PostMapping("/api/searchContestDetailByOrganizerAccount")

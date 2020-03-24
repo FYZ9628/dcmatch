@@ -26,9 +26,14 @@ public class ContestDetailService {
         return contestDetailDao.save(contestDetail);
     }
 
-    //根据班级名称查询
+    //根据班级名称查询（模糊查询）
     public List<ContestDetail> findAllByContestTitleLike(String keywords) {
         return contestDetailDao.findAllByContestTitleLikeOrOrganizer_User_NameLike('%' + keywords + '%', '%' + keywords + '%');
+    }
+
+    //根据班级名称查询（精确查询）
+    public ContestDetail findByContestTitle(String keywords) {
+        return contestDetailDao.findByContestTitle(keywords);
     }
 
     public List<ContestDetail> findAllByOrganizerAccount(String keywords) {
