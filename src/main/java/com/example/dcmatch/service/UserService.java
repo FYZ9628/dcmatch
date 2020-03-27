@@ -34,6 +34,10 @@ public class UserService {
         return userDao.getByAccountAndPassword(account, password);
     }
 
+    public User getByAccountAndName(String account, String name){
+        return userDao.getByAccountAndName(account, name);
+    }
+
     public boolean phoneIsExist(String phone) {
         User user = getByPhone(phone);
         return null!=user;
@@ -55,6 +59,10 @@ public class UserService {
 
     public User getByPhoneAndPassword(String phone, String password){
         return userDao.getByPhoneAndPassword(phone, password);
+    }
+
+    public User getByPhoneAndName(String phone, String name){
+        return userDao.getByPhoneAndName(phone, name);
     }
 
     public void add(User user) {
