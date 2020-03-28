@@ -48,6 +48,11 @@ public class TeamContestService {
         return teamContestDao.findById(id);
     }
 
+    //    通过  id 查询
+    public List<TeamContest> findAllByTeamName(String teamName){
+        return teamContestDao.findAllByTeamName(teamName);
+    }
+
     public boolean isExist(int id) {
         TeamContest teamContest = findById(id);
         return null != teamContest;

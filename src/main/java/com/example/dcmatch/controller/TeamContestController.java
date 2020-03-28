@@ -44,6 +44,12 @@ public class TeamContestController {
         return teamContestService.findById(searchByInt.getKeywords());
     }
 
+    @PostMapping("/api/searchTeamContestByTeamName")
+    public List<TeamContest> findAllByTeamName(@RequestBody Search s) throws Exception {
+
+        return teamContestService.findAllByTeamName(s.getKeywords());
+    }
+
     @PostMapping("/api/searchTeamContestByContestDetailId")
     public List<TeamContest> findByContestDetailId(@RequestBody SearchByInt searchByInt) throws Exception {
 
