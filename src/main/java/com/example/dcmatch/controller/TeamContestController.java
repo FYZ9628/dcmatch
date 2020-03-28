@@ -1,7 +1,6 @@
 package com.example.dcmatch.controller;
 
-import com.example.dcmatch.model.Contest;
-import com.example.dcmatch.model.TeamContest;
+import com.example.dcmatch.model.*;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
 import com.example.dcmatch.result.SearchByInt;
@@ -51,19 +50,60 @@ public class TeamContestController {
         return teamContestService.findAllByContestDetail_Id(searchByInt.getKeywords());
     }
 
+//    //每一个报名的学生都会产生一个比赛记录，只是contest添加，但contestDetail不用添加
+//    //当contestDetail删除记录时，contest里所有有关的比赛记录都要被删除
+//    @PostMapping("/api/addTeamContest")
+//    public TeamContest addContest(@RequestBody TeamContest teamContest) throws Exception {
+//
+//        boolean bl = teamContestService.isExist(teamContest.getId());
+//        if (bl == true){
+//            return null;
+//        }else {
+//
+//            teamContest = teamContestService.addOrUpdateTeamContest(teamContest);
+//
+//            return teamContest;
+//        }
+//    }
+
     //每一个报名的学生都会产生一个比赛记录，只是contest添加，但contestDetail不用添加
     //当contestDetail删除记录时，contest里所有有关的比赛记录都要被删除
     @PostMapping("/api/addTeamContest")
-    public TeamContest addContest(@RequestBody TeamContest teamContest) throws Exception {
+    public TeamContestList addContest(@RequestBody TeamContestList teamContestList) throws Exception {
 
-        boolean bl = teamContestService.isExist(teamContest.getId());
+        boolean bl = teamContestService.isExist(teamContestList.getId());
         if (bl == true){
             return null;
-        }else {
+        } else {
+            ContestDetail contestDetail = teamContestList.getContestDetail();
+            List<Student> studentList;
+            String teacherAccount = teamContestList.getTeacherAccount();
+            String teacherName = teamContestList.getTeacherName();
+            String state = teamContestList.getState();
+            String ticketNumber = teamContestList.getTicketNumber();
+            int score = teamContestList.getScore();
+            String teamName = teamContestList.getTeamName();
+            String remarks = "";
+            for (int i = 0; i < teamContestList.getStudentList().size(); i++) {
+               Student student = teamContestList.getStudentList().get(i);
+               if (teamContestList.getRemarksIndex() == i) {
+                   remarks = "队长";
+               }
+               TeamContest teamContest = new TeamContest();
+               teamContest.setId(0); // 在数据库中添加时会自动递增数字，这个 0 是没有什么作用的
+               teamContest.setContestDetail(contestDetail);
+               teamContest.setStudent(student);
+               teamContest.setTeacherAccount(teacherAccount);
+               teamContest.setTeacherName(teacherName);
+               teamContest.setState(state);
+               teamContest.setTicketNumber(ticketNumber);
+               teamContest.setScore(score);
+               teamContest.setTeamName(teamName);
+               teamContest.setRemarks(remarks);
+               teamContest = teamContestService.addOrUpdateTeamContest(teamContest);
+            }
 
-            teamContest = teamContestService.addOrUpdateTeamContest(teamContest);
-
-            return teamContest;
+            return teamContestList;
         }
     }
 
