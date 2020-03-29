@@ -89,24 +89,24 @@ public class TeamContestController {
             String ticketNumber = teamContestList.getTicketNumber();
             int score = teamContestList.getScore();
             String teamName = teamContestList.getTeamName();
-            String remarks = "";
             for (int i = 0; i < teamContestList.getStudentList().size(); i++) {
-               Student student = teamContestList.getStudentList().get(i);
-               if (teamContestList.getRemarksIndex() == i) {
-                   remarks = "队长";
-               }
-               TeamContest teamContest = new TeamContest();
-               teamContest.setId(0); // 在数据库中添加时会自动递增数字，这个 0 是没有什么作用的
-               teamContest.setContestDetail(contestDetail);
-               teamContest.setStudent(student);
-               teamContest.setTeacherAccount(teacherAccount);
-               teamContest.setTeacherName(teacherName);
-               teamContest.setState(state);
-               teamContest.setTicketNumber(ticketNumber);
-               teamContest.setScore(score);
-               teamContest.setTeamName(teamName);
-               teamContest.setRemarks(remarks);
-               teamContest = teamContestService.addOrUpdateTeamContest(teamContest);
+                String remarks = "";
+                Student student = teamContestList.getStudentList().get(i);
+                if (teamContestList.getRemarksIndex() == i) {
+                    remarks = "队长";
+                }
+                TeamContest teamContest = new TeamContest();
+                teamContest.setId(0); // 在数据库中添加时会自动递增数字，这个 0 是没有什么作用的
+                teamContest.setContestDetail(contestDetail);
+                teamContest.setStudent(student);
+                teamContest.setTeacherAccount(teacherAccount);
+                teamContest.setTeacherName(teacherName);
+                teamContest.setState(state);
+                teamContest.setTicketNumber(ticketNumber);
+                teamContest.setScore(score);
+                teamContest.setTeamName(teamName);
+                teamContest.setRemarks(remarks);
+                teamContest = teamContestService.addOrUpdateTeamContest(teamContest);
             }
 
             return teamContestList;
