@@ -30,6 +30,10 @@ public class TeamContestService {
         return teamContestDao.findAllByStudent_User_Account(keywords);
     }
 
+    public List<TeamContest> findAllByTeacherAccount(String keywords) {
+        return teamContestDao.findAllByTeacherAccount(keywords);
+    }
+
     public List<TeamContest> findAllByOrganizerAccount(String keywords) {
         return teamContestDao.findAllByContestDetail_Organizer_User_Account(keywords);
     }

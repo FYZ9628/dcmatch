@@ -32,6 +32,12 @@ public class TeamContestController {
         return teamContestService.findAllByStudentAccount(s.getKeywords());
     }
 
+    @PostMapping("/api/searchTeamContestByTeacherAccount")
+    public List<TeamContest> findAllByTeacherAccount(@RequestBody Search s) throws Exception {
+
+        return teamContestService.findAllByTeacherAccount(s.getKeywords());
+    }
+
     @PostMapping("/api/searchTeamContestByOrganizerAccount")
     public List<TeamContest> findAllByOrganizerAccount(@RequestBody Search s) throws Exception {
 
@@ -133,6 +139,23 @@ public class TeamContestController {
         TeamContest teamContest = teamContestService.findById(teamContestId.getId());
         if (teamContest != null){
             teamContestService.deleteById(teamContestId.getId());
+            //   删除成功返回码 100
+            return new Result(100);
+        } else {
+            //   删除失败返回码 400
+            return new Result(400);
+        }
+    }
+
+    @PostMapping("/api/deleteTeam")
+    public Result deleteTeam(@RequestBody Search s) throws Exception {
+        //因为前端只是传了一个 id 过来，所以 teacherId 里面只有一个 id 没有其他信息
+        //所以要再通过 id 查询 teacher 的其他信息
+        List<TeamContest> teamContestList = teamContestService.findAllByTeamName(s.getKeywords());
+        if (teamContestList != null){
+            for (int i = 0; i < teamContestList.size(); i++) {
+                teamContestService.deleteById(teamContestList.get(i).getId());
+            }
             //   删除成功返回码 100
             return new Result(100);
         } else {
