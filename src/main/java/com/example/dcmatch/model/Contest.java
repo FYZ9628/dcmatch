@@ -27,7 +27,7 @@ public class Contest {
     @JoinColumn(name="student_id")
     private Student student;
 
-    int state;
+    String state;
     String ticketNumber;
     int score;
 
@@ -55,11 +55,11 @@ public class Contest {
         this.student = student;
     }
 
-    public int getState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(int state) {
+    public void setState(String state) {
         this.state = state;
     }
 
