@@ -35,7 +35,8 @@ public class AdminLoginController {
         } else if (user.getType() == 1){
             String mAccount = user.getAccount();
             String mPassword = user.getPassword();
-            return new Result(100, mAccount, mPassword);
+            String mName = user.getName();
+            return new Result(100, mAccount, mPassword, mName);
         } else {
             return new Result(400);
         }
