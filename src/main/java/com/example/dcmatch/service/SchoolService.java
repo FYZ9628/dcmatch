@@ -1,8 +1,6 @@
 package com.example.dcmatch.service;
 
-import com.example.dcmatch.dao.ClassDao;
 import com.example.dcmatch.dao.SchoolDao;
-import com.example.dcmatch.model.Class;
 import com.example.dcmatch.model.School;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;

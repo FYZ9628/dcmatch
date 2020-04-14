@@ -3,17 +3,12 @@ package com.example.dcmatch.controller;
 import com.example.dcmatch.model.Student;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
-import com.example.dcmatch.service.ClassService;
 import com.example.dcmatch.service.StudentService;
 import com.example.dcmatch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
-import java.util.Random;
 
 /**
  * 控制层  转发调用

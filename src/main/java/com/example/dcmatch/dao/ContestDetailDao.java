@@ -1,7 +1,5 @@
 package com.example.dcmatch.dao;
 
-import com.example.dcmatch.model.Academy;
-import com.example.dcmatch.model.Contest;
 import com.example.dcmatch.model.ContestDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 

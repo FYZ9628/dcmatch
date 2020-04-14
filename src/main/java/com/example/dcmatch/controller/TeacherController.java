@@ -1,11 +1,8 @@
 package com.example.dcmatch.controller;
 
-import com.example.dcmatch.model.Student;
 import com.example.dcmatch.model.Teacher;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
-import com.example.dcmatch.service.ClassService;
-import com.example.dcmatch.service.StudentService;
 import com.example.dcmatch.service.TeacherService;
 import com.example.dcmatch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,14 +1,9 @@
 package com.example.dcmatch.controller;
 
-import com.example.dcmatch.model.Class;
 import com.example.dcmatch.model.Organizer;
-import com.example.dcmatch.model.Student;
-import com.example.dcmatch.model.Teacher;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
-import com.example.dcmatch.service.ClassService;
 import com.example.dcmatch.service.OrganizerService;
-import com.example.dcmatch.service.StudentService;
 import com.example.dcmatch.service.UserService;
 import io.swagger.annotations.ApiImplicitParam;
 import org.springframework.beans.factory.annotation.Autowired;

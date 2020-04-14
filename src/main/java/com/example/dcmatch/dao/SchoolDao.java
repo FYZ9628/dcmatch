@@ -1,6 +1,5 @@
 package com.example.dcmatch.dao;
 
-import com.example.dcmatch.model.Class;
 import com.example.dcmatch.model.School;
 import org.springframework.data.jpa.repository.JpaRepository;
 
