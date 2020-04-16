@@ -52,9 +52,14 @@ public class TeamContestService {
         return teamContestDao.findById(id);
     }
 
-    //    通过  id 查询
+    //    通过  团队名称 查询
     public List<TeamContest> findAllByTeamName(String teamName){
         return teamContestDao.findAllByTeamName(teamName);
+    }
+
+    //    通过 团队名称 和 id 查询
+    public List<TeamContest> findAllByTeamNameAndContestDetailId(String teamName, int contestDetailId){
+        return teamContestDao.findAllByTeamNameAndContestDetail_Id(teamName, contestDetailId);
     }
 
     public boolean isExist(int id) {

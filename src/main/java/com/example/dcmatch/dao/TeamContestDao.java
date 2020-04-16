@@ -19,4 +19,6 @@ public interface TeamContestDao extends JpaRepository<TeamContest,Integer> {
     TeamContest findById(int id);
 
     List<TeamContest> findAllByTeamName(String teamName);
+
+    List<TeamContest> findAllByTeamNameAndContestDetail_Id(String teamName, int contestDetailId);
 }

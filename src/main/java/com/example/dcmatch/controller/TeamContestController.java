@@ -4,6 +4,7 @@ import com.example.dcmatch.model.*;
 import com.example.dcmatch.result.Result;
 import com.example.dcmatch.result.Search;
 import com.example.dcmatch.result.SearchByInt;
+import com.example.dcmatch.result.SearchForTeamSignUp;
 import com.example.dcmatch.service.ContestService;
 import com.example.dcmatch.service.TeamContestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,12 @@ public class TeamContestController {
     public List<TeamContest> findAllByTeamName(@RequestBody Search s) throws Exception {
 
         return teamContestService.findAllByTeamName(s.getKeywords());
+    }
+
+    @PostMapping("/api/searchTeamContestByTeamNameAndContestDetailId")
+    public List<TeamContest> findAllByTeamNameAndContestDetailId(@RequestBody SearchForTeamSignUp s) throws Exception {
+
+        return teamContestService.findAllByTeamNameAndContestDetailId(s.getKeywords(), s.getId());
     }
 
     @PostMapping("/api/searchTeamContestByContestDetailId")
