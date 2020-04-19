@@ -38,8 +38,11 @@ public class SignUpController {
         account = HtmlUtils.htmlEscape(account);
 
         // 前端返回的 account 可以是账号（account），也可以是电话号码（phone）
-        User user = userService.getByAccountAndPassword(account, requestUser.getPassword());
-        User user2 = userService.getByPhoneAndPassword(account, requestUser.getPassword());
+//        User user = userService.getByAccountAndPassword(account, requestUser.getPassword());
+//        User user2 = userService.getByPhoneAndPassword(account, requestUser.getPassword());
+
+        User user = userService.getByAccountAndName(account, requestUser.getName());
+        User user2 = userService.getByPhoneAndName(account, requestUser.getName());
 
         // 通过account和password验证登录
         if (null != user) {
