@@ -1,5 +1,11 @@
 # dcmatch
 
+idea项目：https://github.com/FYZ9628/dcmatch
+
+webstorm项目：https://github.com/FYZ9628/dcmatch-vue
+
+pycharm项目：https://github.com/FYZ9628/dcmatch-django
+
 学科竞赛赛程管理信息系统
 
 本项目是我的本科毕业设计项目《学科竞赛赛程管理信息系统》，该系统采用了前后端完全分离的开发方法开发本系统，系统最开始是只做了java版的后端，后来因为对python比较感兴趣，于是花了一些时间做了一个python的后端，复用了前端，使用python版的后端可能有些功能会有一些bug，如有发现bug可看看java版的后端，也可私信我。使用到的技术有：
