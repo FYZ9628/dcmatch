@@ -1,0 +1,63 @@
+设置反向代理
+
+用npm的时候
+npm install --save axios
+
+
+用yarn的时候
+yarn add axios
+
+
+安装 Element
+yarn add element-ui
+
+
+
+引入 Vuex ，用于拦截
+yarn add vuex --save
+
+
+
+引入vue-resource，用于http请求
+yarn add vue-resource
+
+
+引入vue-echarts
+先安装vue-echarts
+npm install echarts vue-echarts
+
+在main文件中：
+import ECharts from 'vue-echarts'
+Vue.component('v-chart', ECharts)
+
+以下是在要引用图表的地方导入
+// 折线
+import 'echarts/lib/chart/line'
+// 饼状图
+import 'echarts/lib/chart/pie'
+// 柱状图
+import 'echarts/lib/chart/bar'
+// 提示
+import 'echarts/lib/component/tooltip'
+// 图例
+import 'echarts/lib/component/legend'
+// 标题
+import 'echarts/lib/component/title'
+
+生成pdf
+npm install vue-print-nb --save
+
+import Print from 'vue-print-nb'
+Vue.use(Print)
+
+
+导入Excel
+参考网站
+https://segmentfault.com/a/1190000018993619?utm_source=tag-newest
+https://blog.csdn.net/Yangxuxux/article/details/82353922
+
+npm install -S file-saver xlsx
+npm install -D script-loader
+
+导出Excel
+将Blob.js和Export2Excel.js放到前端项目，然后直接使用

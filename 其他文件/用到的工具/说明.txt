@@ -1,0 +1,4 @@
+这是浏览器的插件，方便看json数据的
+
+安装教程
+https://www.cnblogs.com/whycxb/p/7126116.html

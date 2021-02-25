@@ -1,0 +1,23 @@
+pip install pymysql
+
+pip install django-simpleui
+
+pip install djangorestframework
+
+pip install django-cors-headers
+
+pip install -i https://pypi.doubanio.com/simple/ pandas
+
+
+教程
+https://www.cnblogs.com/lldbyt/p/14286952.html
+
+国外的镜像源
+https://pypi.python.org/simple
+
+国内的镜像源
+目前国内pip 镜像源有：
+清华: https://pypi.tuna.tsinghua.edu.cn/simple
+豆瓣: http://pypi.douban.com/simple/
+阿里: http://mirrors.aliyun.com/pypi/simple/
+
