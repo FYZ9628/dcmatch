@@ -1,12 +1,15 @@
 # dcmatch
+后端：
+    idea项目(1)：https://github.com/FYZ9628/dcmatch
 
-idea项目(1)：https://github.com/FYZ9628/dcmatch
+    idea项目(2)：https://github.com/FYZ9628/dcmatch_ssm_springboot
+    
+    pycharm项目：https://github.com/FYZ9628/dcmatch-django
 
-idea项目(2)：https://github.com/FYZ9628/dcmatch_ssm_springboot
+前端：
+    webstorm项目：https://github.com/FYZ9628/dcmatch-vue
 
-webstorm项目：https://github.com/FYZ9628/dcmatch-vue
 
-pycharm项目：https://github.com/FYZ9628/dcmatch-django
 
 学科竞赛赛程管理信息系统
 
